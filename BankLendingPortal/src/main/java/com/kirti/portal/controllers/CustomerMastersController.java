@@ -30,28 +30,28 @@ public class CustomerMastersController {
 	private CustomerMastersService userService;
 	
 	//Post-create user
-	@PostMapping("new/")
+	@PostMapping("/new")
 	public ResponseEntity<CustomerMastersDto> createNewCustomer( @RequestBody@Valid CustomerMastersDto userDto){
 		CustomerMastersDto createUserDto= this.userService.createCustomerMaster(userDto);
 		return new ResponseEntity<>(createUserDto,HttpStatus.CREATED);
 	}
 	
 	//Put- update user
-	@PutMapping("{userId}/")
+	@PutMapping("{userId}/update")
 	public ResponseEntity<CustomerMastersDto> updateCustomer( @RequestBody@Valid CustomerMastersDto userDto,@PathVariable String userId){
 		CustomerMastersDto updatedUser = this.userService.updateCustomerMaster(userDto,userId);
 		return ResponseEntity.ok(updatedUser);
 	}
 	
 	//Delete - delete user
-	@DeleteMapping("{userId}/")
+	@DeleteMapping("{userId}")
 	public ResponseEntity<?> deleteUser(@PathVariable String userId){
 		ResponseEntity<?> deleteUser=this.deleteUser(userId);
 		return new ResponseEntity<ApiResponse>(new ApiResponse("User deleted Successfully", true),HttpStatus.OK);
 	}
 	
 	//GET- user get
-	@GetMapping("/")
+	@GetMapping
 	public ResponseEntity<List<CustomerMastersDto>> getAllUsers(){
 		return ResponseEntity.ok(this.userService.getAllUsers());
 	}

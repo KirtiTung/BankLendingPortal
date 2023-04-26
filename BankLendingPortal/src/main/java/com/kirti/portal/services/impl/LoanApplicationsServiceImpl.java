@@ -53,9 +53,13 @@ public class LoanApplicationsServiceImpl implements LoanApplicationsService {
 		// TODO Auto-generated method stub
 		  LoanApplications loanApp=this.loanAppRepo.findById(loanAppId).orElseThrow(()->new ResourceNotFoundException("Loan","id",loanAppId));
 		  
-		  LoanApplications map = this.modelMapper.map(loanAppDto,LoanApplications.class);
+		  LoanApplications updatedLoanApp = this.modelMapper.map(loanAppDto,LoanApplications.class);
+		  updatedLoanApp.setLoan_App_Date(LocalDate.now());
+		  updatedLoanApp.setCustomerMasters(loanApp.getCustomerMasters());
+		  
+		  LoanApplications save = this.loanAppRepo.save(updatedLoanApp);
 		
-		return null;
+		return this.modelMapper.map(save,LoanApplicationsDto.class);
 	}
 
 	@Override
@@ -96,6 +100,14 @@ public class LoanApplicationsServiceImpl implements LoanApplicationsService {
 		List<LoanApplications> loanApps=this.loanAppRepo.findByStatus(status);
 		List<LoanApplicationsDto> loanAppDtos = loanApps.stream().map((loanApp)->this.modelMapper.map(loanApp,LoanApplicationsDto.class)).collect(Collectors.toList());
 		return loanAppDtos;
+	}
+
+	@Override
+	public LoanApplicationsDto checkCustomerAcceptanceStatus(String loanAppId) {
+		// TODO Auto-generated method stub
+		LoanApplications loanApp = this.loanAppRepo.findById(loanAppId).orElseThrow(()->new ResourceNotFoundException("LoanApplication","LoanApplication id",loanAppId));
+		
+		return this.modelMapper.map(loanApp,LoanApplicationsDto.class);
 	}
 
 }
