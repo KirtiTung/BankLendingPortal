@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "1518d81f-e58e-45e0-bc71-2e67514bcaca",
+		"name": "According to the document",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Table 2 : Custmer  Management - Endpoint - 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pk_Customer_Master\":\"4\",\r\n    \"cust_First_Name\":\"Ishant\",\r\n    \"cust_Last_Name\":\"Naik\",\r\n    \"address\":\"E-35,Sector-9,RKL\",\r\n    \"city\":\"Rourkela\",\r\n    \"state\":\"Odisha\",\r\n    \"contactNo\":\"1234567891\",\r\n    \"adharCard\":\"234775045\",\r\n    \"emailId\":\"Sanjib@cognizant.com\",\r\n    \"birthDate\":\"20/10/2000\",\r\n    \"monthlySalary\":\"400000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/customers/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"new"
+					]
+				},
+				"description": "Using this endpoint the customer will be able to register him/her"
+			},
+			"response": []
+		},
+		{
+			"name": "Table 3 : Custmer  Management - Endpoint - 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers"
+					]
+				},
+				"description": "This endpoint will allow the banker to view all the customer present in the system"
+			},
+			"response": []
+		},
+		{
+			"name": "Table 4: Custmer  Management - Endpoint - 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"1"
+					]
+				},
+				"description": "With the help of this endpoint the banker will be able to see the information of customer"
+			},
+			"response": []
+		},
+		{
+			"name": "Table 5 : Custmer  Management - Endpoint – 4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pk_Customer_Master\":\"4\",\r\n    \"cust_First_Name\":\"Ratnam\",\r\n    \"cust_Last_Name\":\"Yadav\",\r\n    \"address\":\"E-35,Sector-9,RKL\",\r\n    \"city\":\"Rourkela\",\r\n    \"state\":\"Odisha\",\r\n    \"contactNo\":\"1234567891\",\r\n    \"adharCard\":\"234775045\",\r\n    \"emailId\":\"Sanjib@cognizant.com\",\r\n    \"birthDate\":\"20/10/2000\",\r\n    \"monthlySalary\":\"400000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/customers/1/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"1",
+						"update"
+					]
+				},
+				"description": "With the help of this endpoint the customer will be able to update his record"
+			},
+			"response": []
+		},
+		{
+			"name": "Table 6 : Custmer  Management - Endpoint – 5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/status/NewLoan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"status",
+						"NewLoan"
+					]
+				},
+				"description": "This endpoint will allow the banker to view all the loan records based on the status like NewLoan/Pending/approved/"
+			},
+			"response": []
+		},
+		{
+			"name": " Table 7 : Custmer  Management - Endpoint – 6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/date/20-10-200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"date",
+						"20-10-200"
+					]
+				},
+				"description": "This endpoint will allow the banker to view /pull all the loan records based the date/"
+			},
+			"response": []
+		},
+		{
+			"name": "Table 8 : Custmer  Management - Endpoint – 7",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pk_Loan_Application\":\"1\",\r\n    \"loan_Amt\":\"10000\",\r\n    \"no_Of_Years\":\"4\",\r\n    \"purpose\":\"sa\",\r\n    \"app_Status\":\"ok\",\r\n    \"type_Of_Loan\":\"hello\",\r\n    \"status\":\"NewLoan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/1/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"1",
+						"update"
+					]
+				},
+				"description": "With the help of this endpoint the customer will be able to update his loan request"
+			},
+			"response": []
+		},
+		{
+			"name": "Table 9 : Custmer  Management - Endpoint – 8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/laonAppId/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"laonAppId",
+						"1"
+					]
+				},
+				"description": "With the help of this endpoint the customer will view his account"
+			},
+			"response": []
+		},
+		{
+			"name": "Table 10 : Custmer  Management - Endpoint – 9",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/checkCustomerAcceptanceStatus/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"checkCustomerAcceptanceStatus",
+						"1"
+					]
+				},
+				"description": "Using this endpoint the banker will  check customer has accepted or canceled the loan "
+			},
+			"response": []
+		}
+	]
+}

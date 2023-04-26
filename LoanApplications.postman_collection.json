@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "e8a1f766-e8a8-485c-b45d-e3328aac579f",
+		"name": "LoanApplications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createLoanApp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pk_Loan_Application\":\"1\",\r\n    \"loan_Amt\":\"10000\",\r\n    \"no_Of_Years\":\"3\",\r\n    \"purpose\":\"sa\",\r\n    \"app_Status\":\"ok\",\r\n    \"type_Of_Loan\":\"hello\",\r\n    \"status\":\"NewLoan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/customer/1/loanApp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customer",
+						"1",
+						"loanApp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by customer id all loansApps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/1/loans/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"1",
+						"loans",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete appLoan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/delete/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"delete",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Loan Application by loan id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pk_Loan_Application\":\"7\",\r\n    \"loan_Amt\":\"10000\",\r\n    \"no_Of_Years\":\"3\",\r\n    \"purpose\":\"sa\",\r\n    \"app_Status\":\"ok\",\r\n    \"type_Of_Loan\":\"hello\",\r\n    \"status\":\"new\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/7/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"7",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Loan By Loan Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/la/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"la",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkCustomerAcceptanceStatusBy ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/checkCustomerAcceptanceStatus/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"checkCustomerAcceptanceStatus",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by status type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customers/loan/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customers",
+						"loan",
+						"new"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
